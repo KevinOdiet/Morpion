@@ -7,6 +7,10 @@ td {
     text-align: center;
 }
 
+#winner{
+    text-align: center;
+}
+
 .symbole_0{
     background-image:url("./0.png");
 }
