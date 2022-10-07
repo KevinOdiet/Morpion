@@ -14,12 +14,30 @@ $(function (){
                 $(element).addClass("symbole_0")
                 i++
                 array.splice(index,1,"O")
+
+                if (i >= 5) {
+                    var o = winner("O")
+                    if (o == true) {
+                        reset()
+                    }
+                }
+
             } else {
                 $(element).addClass("symbole_1")
                 i++
                 array.splice(index,1,"X")
+
+                if (i >= 5){
+                        var x = winner("X")
+                        if (x == true) {
+                            reset()
+                        }
             }
         }
+            if (egalite == 2){
+                $("#winner").append("Égalité")
+                reset()
+            }
 
         function winner(joueur){
             if (array[0] === joueur && array[1] === joueur && array[2] === joueur ||
@@ -33,7 +51,6 @@ $(function (){
 
                 $("#winner").append("Le joueur "+ joueur + " a gagné")
                 return true;
-
 
             }else if (i > 8){
                 egalite++
@@ -54,24 +71,6 @@ $(function (){
             },2000);
         }
 
-
-        if (i >= 5){
-
-            var x = winner("X")
-            if (x == true){
-                reset()
-            }
-
-            var o = winner("O")
-            if (o == true){
-                reset()
-            }
-
-
-            if (egalite == 2){
-                $("#winner").append("Égalité")
-                reset()
-            }
         }
     })
 
