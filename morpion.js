@@ -43,8 +43,7 @@ $(function (){
             function reset(){
                 array = [0,1,2,3,4,5,6,7,8];
                 setTimeout(function () {
-                    $("td").removeClass("symbole_0")
-                    $("td").removeClass("symbole_1")
+                    $("td").removeClass("symbole_0 symbole_1")
                     i = 0
                     egalite = 0
                 }, 300)
@@ -53,7 +52,6 @@ $(function (){
                     document.getElementById('winner').innerHTML = "";
                 },2000);
             }
-
 
             if (i >= 5){
                     var x = winner("X")
